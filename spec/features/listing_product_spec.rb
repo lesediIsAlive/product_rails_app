@@ -20,6 +20,7 @@ RSpec.feature "listing all articles" do
 
     scenario "A user has no products" do
         Product.delete_all
+        visit "/"
 
         expect(page).to have_content("All Products")
         expect(page).to have_content("There are no products.")
