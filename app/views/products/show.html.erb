@@ -2,5 +2,5 @@
 <p><%= @product.description%></p>
 
 <p><%=@product.price %></p>
-<%= link_to "Edit Product",edit_product_url(@product) %>
-<%= link_to "Delete Product", product_path(@product),method: :delete, data: {confirm:"Are you sure?"} %>
+<%= link_to "Edit Product",edit_product_url(@product),class: "btn btn-default btn-md" %>
+<%= link_to "Delete Product", product_path(@product),method: :delete, data: {confirm:"Are you sure?"},class: "btn btn-default btn-md" %>

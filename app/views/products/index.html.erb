@@ -1,13 +1,30 @@
-<h1>All Products</h1>
+<h1>All Products (<%= @products.count%>)</h1>
 
 <%= link_to "New Product", new_product_path, class: "btn btn-default" %>
 <% if @products.empty?%>
 <p> There are no products.</p>
 <%else%>
+<table id="tablePreview" class="table table-hover table-sm table-borderless">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
 
-<% @products.each do |product| %>
-    <%= link_to product.name, product %>
-    <%= product.price %>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+
+    <%= render @products %>
+
 <% end -%>
 
-<% end -%>
+<!--Table-->
+
+    
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
