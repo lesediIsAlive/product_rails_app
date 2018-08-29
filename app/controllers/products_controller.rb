@@ -21,10 +21,32 @@ class ProductsController < ApplicationController
     end
 
     def show
-        
+    end
+
+    def edit
+    end
+
+    def update
+        if @product.update(product_params)
+           flash[:success] = "Product has been updated"
+           redirect_to @product
+       else
+            flash.now[:danger] = "Product has not been updated"
+            render :edit
+       end
     end
 
     def destroy
+        @product.destroy
+        flash[:success] = "Product has been deleted"
+        redirect_to products_path
+    end
+
+    protected
+
+    def resource_not_found
+        flash[:alert] = "This product you are looking for could not be found"
+        redirect_to root_path
     end
 
 

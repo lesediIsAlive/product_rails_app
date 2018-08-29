@@ -10,7 +10,7 @@ RSpec.feature "A user delete a product" do
         click_link @product.name
         click_link "Delete Product"
 
-        expect(page).to have_content("Article has been deleted")
+        expect(page).to have_content("Product has been deleted")
         expect(current_path).to eq(products_path)
         
     end

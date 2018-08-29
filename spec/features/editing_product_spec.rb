@@ -15,11 +15,13 @@ RSpec.feature "A user edits a product" do
         fill_in "Description", with: "50mm f1,8 STM"
         fill_in "Price", with: "25000.00"
 
+        click_button "Update Product"
+
        expect(page).to have_content("Product has been updated")
        expect(page.current_path).to eq(product_path(@product))
     end
 
-    scenario "A user tired to update a product with with an invalid parameter" do
+    scenario "A user tried to update a product with with an invalid parameter" do
         visit "/"
         click_link @product.name
         click_link "Edit Product"
@@ -27,9 +29,11 @@ RSpec.feature "A user edits a product" do
         fill_in "Name", with: ""
         fill_in "Description", with: ""
         fill_in "Price", with: ""
+        
+        click_button "Update Product"
 
         expect(page).to have_content("Product has not been updated")
         expect(page).to have_content("Name can't be blank")
-        expect(page).to have_content("You need to set a price")
+        expect(page).to have_content("Name can't be blank")
     end
 end
