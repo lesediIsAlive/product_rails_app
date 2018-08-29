@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "listing all articles" do
-s    before do 
+     before do 
         @product1 = Product.create(name:"Canon 5D Mark IV DSLR with 24-70mm f/4L Lens",
             description:"Canon EOS 5D Mark IV DSLR Camera with 24-70mm f/4L Lens",price: 55489.00)
         @product2 = Product.create(name: "Nikon D850 45.7MP DSLR Body Only", description:"Nikon D500 20.9MP with 50mm f1.4G Lens and SB-5000 Speedlight Flash",price: 52489.00)

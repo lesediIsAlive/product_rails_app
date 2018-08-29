@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.features "A user delete a product" do
+RSpec.feature "A user delete a product" do
    before do 
         @product = Product.create(name:"Canon 5D Mark IV DSLR with 24-70mm f/4L Lens",
             description:"Canon EOS 5D Mark IV DSLR Camera with 24-70mm f/4L Lens",price: 55489.00)
