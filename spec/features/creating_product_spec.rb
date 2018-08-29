@@ -11,7 +11,7 @@ RSpec.feature "Creating products" do
 
        click_button "Create Product"
 
-       expect(page).to have_content("You have successfully created the product.")
+       expect(page).to have_content("You have created the product.")
        expect(page.current_path).to eq(products_path)
 
     end
@@ -25,8 +25,8 @@ RSpec.feature "Creating products" do
 
        click_button "Create Product"
 
-       expect(page).to have_content("Product has not been created")
-       expect(page).to have_content("Name can't ne blank")
-       expect(page).to have_content("You need to set a price")
+       expect(page).to have_content("Product has not been created.")
+       expect(page).to have_content("Name can't be blank")
+       expect(page).to have_content("Price can't be blank")
     end
 end
